@@ -2,6 +2,10 @@
 
 Solution overview at [Kaggle](https://www.kaggle.com/c/hpa-single-cell-image-classification/discussion/238645)
 
+This pipeline achieve 0.55011 in both private and public leaderboard
+
+![screen shot](https://i.ibb.co/m85JkPC/figure1.png)
+
 ## I. HARDWARE:
 ### Train:
 * Ubuntu 20.04.1 LTS (~200GB free disk space)
