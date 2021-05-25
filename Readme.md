@@ -14,7 +14,7 @@ This pipeline achieve 0.55011 in both private and public leaderboard
 * 1 x RTX 3090
 
 ### Predict
-* Please refer to kaggle notebook [sub1](https://www.kaggle.com/steamedsheep/hpa-final-submission-2-candidate-ii) and [sub2](https://www.kaggle.com/steamedsheep/draft-of-submission-of-dakiro-model-sunzi-w0-5?scriptVersionId=62584023)
+* Please refer to kaggle notebook [sub1](https://www.kaggle.com/steamedsheep/hpa-final-submission-2-candidate-ii)
 
 ## II. SOFTWARE
 * Please refer to `Dockerfile`
