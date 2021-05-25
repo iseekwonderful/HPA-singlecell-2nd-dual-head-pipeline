@@ -1,0 +1,122 @@
+__version__: 0.5.2
+transform:
+  __class_fullname__: albumentations.core.composition.Compose
+  additional_targets: {}
+  bbox_params: null
+  keypoint_params: null
+  p: 1.0
+  transforms:
+  - __class_fullname__: albumentations.augmentations.transforms.Resize
+    always_apply: false
+    height: 256
+    interpolation: 1
+    p: 1
+    width: 256
+  - __class_fullname__: albumentations.augmentations.transforms.HorizontalFlip
+    always_apply: false
+    p: 0.5
+  - __class_fullname__: albumentations.augmentations.transforms.VerticalFlip
+    always_apply: false
+    p: 0.5
+  - __class_fullname__: albumentations.augmentations.transforms.Transpose
+    always_apply: false
+    p: 0.5
+  - __class_fullname__: albumentations.augmentations.transforms.ShiftScaleRotate
+    always_apply: false
+    border_mode: 2
+    interpolation: 1
+    mask_value: null
+    p: 0.5
+    rotate_limit:
+    - -45
+    - 45
+    scale_limit:
+    - -0.3
+    - 0.3
+    shift_limit_x:
+    - -0.06
+    - 0.06
+    shift_limit_y:
+    - -0.06
+    - 0.06
+    value: null
+#  - __class_fullname__: albumentations.augmentations.transforms.HueSaturationValue
+#    always_apply: false
+#    hue_shift_limit:
+#    - -0.2
+#    - 0.2
+#    p: 0.5
+#    sat_shift_limit:
+#    - -0.2
+#    - 0.2
+#    val_shift_limit:
+#    - -0.2
+#    - 0.2
+  - __class_fullname__: albumentations.augmentations.transforms.RandomBrightnessContrast
+    always_apply: false
+    brightness_by_max: true
+    brightness_limit:
+    - -0.1
+    - 0.1
+    contrast_limit:
+    - -0.1
+    - 0.1
+    p: 0
+  - __class_fullname__: albumentations.core.composition.OneOf
+    p: 0.5
+    transforms:
+    - __class_fullname__: albumentations.augmentations.transforms.OpticalDistortion
+      always_apply: false
+      border_mode: 4
+      distort_limit:
+      - -1.0
+      - 1.0
+      interpolation: 1
+      mask_value: null
+      p: 0.5
+      shift_limit:
+      - -0.05
+      - 0.05
+      value: null
+    - __class_fullname__: albumentations.augmentations.transforms.GridDistortion
+      always_apply: false
+      border_mode: 4
+      distort_limit:
+      - -1.0
+      - 1.0
+      interpolation: 1
+      mask_value: null
+      num_steps: 5
+      p: 0.5
+      value: null
+    - __class_fullname__: albumentations.augmentations.transforms.ElasticTransform
+      alpha: 3
+      alpha_affine: 50
+      always_apply: false
+      approximate: false
+      border_mode: 4
+      interpolation: 1
+      mask_value: null
+      p: 0.5
+      sigma: 50
+      value: null
+#  - __class_fullname__: albumentations.augmentations.transforms.CLAHE
+#    always_apply: false
+#    clip_limit:
+#    - 1
+#    - 4.0
+#    p: 0.2
+#    tile_grid_size:
+#    - 8
+#    - 8
+  - __class_fullname__: albumentations.augmentations.transforms.Equalize
+    always_apply: false
+    by_channels: true
+    mode: cv
+    p: 0
+  - __class_fullname__: albumentations.augmentations.transforms.Cutout
+    always_apply: false
+    max_h_size: 96
+    max_w_size: 96
+    num_holes: 1
+    p: 0

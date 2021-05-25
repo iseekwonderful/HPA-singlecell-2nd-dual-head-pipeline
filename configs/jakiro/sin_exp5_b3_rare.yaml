@@ -1,0 +1,79 @@
+basic:
+  seed: 233
+  GPU: 0
+  debug: False
+  id: 'unnamed'
+  mode: train
+  search: False
+  amp: 'Native'
+
+experiment:
+  name: 'RandomKTrainTestSplit'
+  random_state: 233
+  run_fold: -1
+  batch_sampler: False
+  weight: False
+  preprocess: JPEG_512_pan
+  image_only: True
+  skip_outlier: True
+  outlier: train
+  count: 16
+  csv_file: 256_train+ext+rare.csv
+
+data:
+  dir_sv: '../tile_128'
+  cell: 'input/train_cell_256'
+
+model:
+  name: 'tf_efficientnet_b3'
+  from_checkpoint: 'none'
+  out_feature: 19
+  params:
+    dropout: 0.5
+    pretrained: True
+
+train:
+  dir: '../results'
+  batch_size: 12
+  num_epochs: 20
+  cutmix: False
+  beta: 1
+  cutmix_prob: 1
+  cutmix_prob_increase: 0
+  validations_round: 1
+  freeze_backbond: 1
+  freeze_top_layer_groups: 0
+  freeze_start_epoch: 0
+
+eval:
+  batch_size: 1
+
+loss:
+  name: 'bce'
+  cellweight: 0.1
+  params:
+#    weight: [ 0.02531037, 0.06579517, 0.04364358, 0.04229549, 0.03539962,
+#        0.03934447, 0.04536092, 0.03703704, 0.04307305, 0.05735393,
+#        0.04914732, 0.30151134, 0.0418487 , 0.0347524 , 0.03067138,
+#        0.10425721, 0.03305898, 0.05933908, 0.15075567]
+#    eps: 0.1
+    reduction: 'none'
+
+optimizer:
+  name: 'Adam'
+  step: 1
+  params:
+    lr: 0.0002
+    weight_decay: 0
+
+scheduler:
+  name: 'CosineAnnealingLR'
+  warm_up: True
+  params:
+    factor: 0.1
+    patience: 10
+
+transform:
+  name: 's_0220/sin_256_final'
+  num_preprocessor: 10
+  size: 256
