@@ -1,3 +1,7 @@
+# HPA-singlecell-2nd-dual-head-pipeline
+
+Solution overview at [Kaggle](https://www.kaggle.com/c/hpa-single-cell-image-classification/discussion/238645)
+
 ## I. HARDWARE:
 ### Train:
 * Ubuntu 20.04.1 LTS (~200GB free disk space)
