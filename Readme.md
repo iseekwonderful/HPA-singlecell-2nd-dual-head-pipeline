@@ -21,7 +21,7 @@ Solution overview at [Kaggle](https://www.kaggle.com/c/hpa-single-cell-image-cla
 1. Make fold input and results at same dir of the repo.
 
 2. Download pregenerated cells from kaggle notebook and decompress to `input/train_cell_256`, after decompression, there will be
-about 70GB `png` file in `input/train_cell_256`, since It's diffcult to use Kaggle API to download notebook output, Please download `result.zip` of the notebook below:
+about 70GB `png` file in `input/train_cell_256`, since It's diffcult to use Kaggle API to download notebook output, Please download `result.zip` of each notebook below:
 * [train cell #1](https://www.kaggle.com/steamedsheep/hpa-cellslicing-256-fix-i)
 * [train_cell_#2](https://www.kaggle.com/steamedsheep/hpa-cellslicing-ii-fix-256)
 * [Phil upload images #1](https://www.kaggle.com/steamedsheep/hpa-cellslicing-256-fix-external-i)
